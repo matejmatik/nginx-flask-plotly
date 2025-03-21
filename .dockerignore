@@ -15,5 +15,7 @@ nginx/
 .venv/
 .ruff_cache/
 CHANGELOG.md
-/static
+static
 static/
+example/
+examples/

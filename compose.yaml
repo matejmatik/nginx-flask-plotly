@@ -1,0 +1,49 @@
+services:
+  nginx:
+    build: nginx
+    container_name: ${STACK_NAME}-nginx
+    image: ${STACK_NAME}-nginx:${PROJECT_VERSION}
+    restart: always
+    volumes:
+      - ./nginx/default.conf:/tmp/default.conf
+    environment: 
+      - FLASK_APP_ADDRESS=${FLASK_APP_NAME}
+      - FLASK_APP_PORT=3000
+    ports:
+      - "80:80"
+    depends_on:
+      - flask-dash
+    command: ["/app/start.sh"]
+  flask-dash:
+    build: .
+    container_name: ${STACK_NAME}-${FLASK_APP_IMAGE}
+    image: ${STACK_NAME}-${FLASK_APP_IMAGE}:${PROJECT_VERSION}
+    env_file:
+      - .env
+    environment:
+      - APP_NAME=${FLASK_APP_NAME}
+      - ENVIRONMENT=production
+      - TIMEZONE=${TIMEZONE?Variable not set}
+      - PROJECT_NAME=${PROJECT_NAME?Variable not set}
+      - PROJECT_VERSION=${PROJECT_VERSION?0.0.0}
+      - FLASK_APP_PORT=${FLASK_APP_PORT}
+      - STATIC_FOLDER=${STATIC_FOLDER?static}
+      - TEMPLATE_FOLDER=${TEMPLATE_FOLDER?templates}
+      - SECRET_KEY=${SECRET_KEY?Variable not set}
+      - WTF_CSRF_ENABLED=${WTF_CSRF_ENABLED?Variable not set}
+      - WTF_CSRF_SECRET_KEY=${WTF_CSRF_SECRET_KEY?Variable not set}
+      - RECAPTCHA_PUBLIC_KEY=${RECAPTCHA_PUBLIC_KEY?Variable not set}
+      - RECAPTCHA_PRIVATE_KEY=${RECAPTCHA_PRIVATE_KEY?Variable not set}
+    restart: always
+    command: ["gunicorn", "application.main:app", "--workers", "1", "--bind", "0.0.0.0:3000", "--log-level", "${FLASK_LOG_LEVEL?Variable not set}", "--reload"]
+    volumes:
+      - ./static:/project/application/static
+    develop:
+      watch:
+        - action: sync
+          path: ./application
+          target: /project/application
+          ignore:
+            - .venv/
+        - action: rebuild
+          path: ./pyproject.toml

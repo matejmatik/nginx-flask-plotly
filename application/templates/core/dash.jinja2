@@ -1,0 +1,22 @@
+{% extends 'core/base.jinja2' %}
+{% block title %} {{ title }} {% endblock %}
+{% block meta %}
+    {{ super() }}
+    {{ metas }}
+{% endblock %}
+{% block styles %}
+    {{ super() }}
+    {{ css }}
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
+{% endblock %}
+{% block app_content %}
+    {{ app_entry }}
+{% endblock %}
+{% block extrajs %}
+    {{ super() }}
+    {{ dash_config }}
+    {{ scripts }}
+    {{ renderer }}
+{% endblock %}

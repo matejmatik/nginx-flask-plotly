@@ -1,0 +1,536 @@
+.text-bg-luka {
+    color: #fff;
+    background-color: #3434eb;
+}
+
+.text-bg-lakers {
+    color: #FDB927;
+    background-color: #552583;
+}
+
+
+.border-luka {
+    border: 2px solid #3434eb !important
+}
+
+
+/* spinner */
+.spinner-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner-border {
+    width: 7rem !important;
+    height: 7rem !important;
+    border-width: 1.25rem !important;
+}
+
+
+/*------------------------------------*/
+
+.bisol {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+
+}
+
+.text-transparent {
+    color: transparent !important;
+}
+
+.bisol-color {
+    color: #F15A22 !important;
+}
+
+.background-bisol-color {
+    background-color: #F15A22 !important;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.becheckbox-margin {
+    padding-top: 1.5em;
+}
+
+
+html,
+body {
+    height: 100%;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+nav {
+    color: #fff;
+    flex: 0;
+    order: 0;
+}
+
+main {
+    flex: 1;
+    order: 1;
+}
+
+footer {
+    flex: 0;
+    color: #fff;
+    order: 2;
+}
+
+a,
+ul,
+li {
+    text-decoration: none !important;
+    list-style: none !important;
+    color: #fff !important;
+}
+
+@media (min-width: 768px) {
+
+    /* Adjust the screen size threshold as needed */
+    .sticky_me {
+        position: -webkit-sticky;
+        /* for Safari */
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+        /* <-- this is the fix */
+        margin-top: 10px;
+    }
+}
+
+th,
+td {
+    vertical-align: middle;
+}
+
+.checkbox-task-completed {
+    background: #229736;
+    display: inline-block;
+    padding: 0.2em 0.4em;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox-archive {
+    background: #585858;
+    display: inline-block;
+    padding: 0.2em 0.4em;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox-archive input[type="checkbox"],
+.checkbox-task-completed input[type="checkbox"] {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    opacity: 0;
+}
+
+.checkbox-archive>input[type='checkbox']+i,
+.checkbox-task-completed>input[type='checkbox']+i {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.checkbox-archive>input[type='checkbox']:checked+i,
+.checkbox-task-completed>input[type='checkbox']:checked+i {
+    color: #fff;
+}
+
+
+.button_invoices {
+    padding: 0 !important;
+    margin-right: 1em !important;
+    font-size: 120% !important;
+}
+
+.hyperlink_file {
+    color: #ccc !important;
+    font-weight: 500 !important;
+    font-size: 110% !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+}
+
+.console {
+    height: 50vh;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f8f9fa;
+    font-family: monospace;
+    font-size: small
+}
+
+.small-fonts {
+    font-size: 0.8em !important;
+}
+
+.extra-small-font {
+    font-size: 0.65em !important;
+}
+
+.badge {
+    width: 100% !important;
+}
+
+.be-small-badge-width {
+    width: 5rem !important;
+}
+
+.be-badge-width {
+    width: 10rem !important;
+}
+
+.desno {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+
+.w-be {
+    width: 6.25% !important;
+}
+
+
+/* NEW -- CSS FOR DATATABLES SEARCH */
+/* -------------------------------- */
+.table {
+    font-size: 95% !important;
+    width: 100% !important;
+}
+
+.dt-container thead {
+    font-size: 1.1em !important;
+}
+
+.dt-container tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+    font-size: 1.0em;
+}
+
+.dt-container tfoot select {
+    width: 100%;
+    box-sizing: border-box !important;
+    font-size: 1.0em;
+}
+
+.select2-container--default .select2-selection--multiple {
+    min-height: 27.08px !important;
+}
+
+.select2-container .select2-selection--multiple {
+    min-height: unset !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    margin: 0 !important;
+    margin-left: 1.5px !important;
+    margin-top: 1.5px !important;
+    color: #000 !important;
+}
+
+.select2-selection {
+    background-color: #3b3b3b !important;
+    padding: 3px !important;
+    border-width: 2px;
+    font-size: 1.0em !important;
+}
+
+.select2-search__field {
+    margin: 0 !important;
+    padding: 0 !important;
+
+}
+
+.select2-results__option {
+    color: #fff !important;
+    background-color: #3b3b3b !important;
+}
+
+.select2-results__option:hover {
+    color: #fff !important;
+    background-color: #000000 !important;
+}
+
+
+
+.dt-search {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
+.dt-info {
+    margin-right: 1em !important;
+}
+
+#dt-search-0,
+#dt-search-1,
+#dt-search-2,
+#dt-search-3 {
+    margin: 0 0.5em !important;
+    padding: 0.5em !important;
+    width: 300px !important;
+    font-size: 1.1em !important;
+}
+
+/* -------------------------------- */
+
+label {
+    font-size: 80% !important;
+}
+
+
+
+.alert {
+    margin-bottom: 0 !important;
+    padding: 0.5em !important;
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.set-width-auto {
+    width: auto !important;
+    padding: 0.5em !important;
+}
+
+
+
+.bg-dgrey {
+    background-color: #212529 !important;
+}
+
+.font-dgrey {
+    font: #212529 !important;
+}
+
+.my-box-shadow {
+    box-shadow: 0px 1px 2px #f1592261, 0px 2px 4px #f1592261, 0px 4px 8px #f1592261, 0px 8px 16px #f1592261;
+}
+
+
+/* Offcanvas menu */
+/* seznam aplikacij v offcanvas meniju */
+.meni:hover {
+    color: #F15A22 !important;
+}
+
+.seznam_app {
+
+    font-size: 14px !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.seznam_app:hover {
+    color: #F15A22 !important;
+}
+
+#be_video {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 42vh !important;
+    max-height: 42vh !important;
+    min-width: 100% !important;
+    margin: 0em !important;
+    padding: 0 !important;
+    border: 0 !important;
+    margin-top: -3em !important;
+}
+
+
+#mtmm-wrapper>div.row:nth-of-type(even) {
+    background-color: #2C3034 !important;
+    /* border-color: #f1592283 !important; */
+    border-radius: 0.5em !important;
+}
+
+#mtmm-wrapper>div.row:nth-of-type(odd) {
+    background-color: #212529 !important;
+    /* border-color: #f1592283 !important; */
+    border-radius: 0.5em !important;
+}
+
+.card {
+    /* border-color: #f1592283 !important; */
+    border-radius: 0.5em !important;
+}
+
+.crossed {
+    text-decoration-line: line-through !important;
+    text-decoration-color: #ffffff !important;
+    text-decoration-thickness: 0.42em !important;
+}
+
+
+
+/* -- dash -- */
+
+
+#app-content>div {
+    height: 100%
+}
+
+#_pages_content {
+    height: 100%;
+}
+
+body,
+html {
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.mantine-5v12bf {
+    font-family: var(--bs-body-font-family);
+    color-scheme: light;
+    font-size: 12px;
+    color: #333;
+}
+
+.gap-1,
+.gap-2,
+.gap-3 {
+    flex-wrap: nowrap !important;
+}
+
+/* .mantine-Slider-label {
+    display: none !important;
+} */
+
+.ag-theme-alpine.compact {
+    --ag-grid-size: 3px;
+}
+
+.ag-theme-alpine-dark .ag-header {
+    font-weight: normal !important;
+    font-size: 64% !important;
+}
+
+.nav-tabs .nav-link {
+    background-color: gray;
+    color: #fff;
+    font-size: 12px !important;
+}
+
+
+.mantine-TextInput-input,
+.mantine-zmh4e,
+.mantine-zunujd,
+.mantine-1y9bl4z,
+.mantine-1rhg0ql,
+.mantine-5v12bf,
+.mantine-ye2q1m,
+.mantine-jrzo75,
+.Select-menu-outer,
+.Select-value-label,
+.Select-control {
+    background-color: rgb(0, 0, 0) !important;
+}
+
+.mantine-TextInput-input,
+.mantine-zmh4e,
+.mantine-zunujd,
+.mantine-1y9bl4z,
+.mantine-1rhg0ql,
+.mantine-ye2q1m,
+.mantine-jrzo75,
+.mantine-4kwz18,
+.mantine-9xpqaw,
+.mantine-5v12bf,
+.Select-menu-outer,
+.Select-value-label,
+.Select-control,
+.mantine-Switch-label,
+.mantine-TextInput-label {
+    color: white !important;
+    font-size: 12px !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.mantine-4kwz18:hover,
+.mantine-9xpqaw:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+
+}
+
+/* other css */
+/* .accordion-button {
+    padding-left: 2px !important;
+} */
+
+
+.col-0-25 {
+    width: 2.08%;
+}
+
+.col-0-5 {
+    width: 4.165%;
+}
+
+.col-0-75 {
+    width: 6.24%;
+}
+
+.col-1-25 {
+    width: 10.4125%;
+}
+
+.col-1-5 {
+    width: 12.495%;
+}
+
+.col-2-5 {
+    width: 20.825%;
+}
+
+.col-3-5 {
+    width: 29.165%;
+}
+
+
+.height-45vh {
+    height: 45vh !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

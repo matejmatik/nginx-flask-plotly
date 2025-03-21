@@ -1,0 +1,27 @@
+/* This CSS is for Dash applications. It is used to style the typography of the application. */
+/* Merge together both the default and custom CSS */
+
+.center-aligned-header .ag-header-cell-label {
+    justify-content: center;
+}
+
+.app_content,
+.app_content > #react-entry-point {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+div.parent_loading_container > div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.disable-form-check-input {
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }

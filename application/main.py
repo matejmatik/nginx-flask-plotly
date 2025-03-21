@@ -1,5 +1,6 @@
 from flask import Flask
 from jinja_partials import register_extensions as jinja_partials_register_extensions
+
 from .api import api_blueprints, register_api_error_handlers, register_dash_blueprints
 from .config import FlaskConfiguration
 from .utils import CustomRequest
@@ -10,14 +11,6 @@ def __setup_docs_routing(app: Flask) -> None: ...
 
 
 def initialize_flask_application() -> Flask:
-
-    def __page_not_found(e) -> str: ...
-
-    def __page_forbidden(e) -> str: ...
-
-    def __page_internal_server_error(e) -> str: ...
-
-    def __page_unauthorized(e) -> str: ...
 
     # Initialize the Flask application
     app = Flask(__name__, instance_relative_config=True)

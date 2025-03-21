@@ -2,6 +2,9 @@ from datetime import datetime  # noqa
 from logging import getLogger  # noqa
 from os import getcwd as os_getcwd, path as os_path  # noqa
 
+from dash import Output, Input  # noqa
+
+from ...connections import kk_client, hedge_client  # noqa
 from ...config import FlaskConfiguration
 from ...utils import CustomDash, format_dash_id  # noqa
 
@@ -57,7 +60,6 @@ def create_dashboard_layout(app_id: str) -> object:
     return BeContainer(
         children=[
             Interval(id=f"{app_id}-interval", interval=INTERVAL_LONG, n_intervals=0),
-            # Storages.
             BeLoading(
                 children=[
                     Store(
@@ -98,7 +100,6 @@ def create_dashboard_layout(app_id: str) -> object:
 
 
 def configure_dash_event_handlers(dash_app: object, app_id: str) -> None:
-    from dash import Input, Output, State  # noqa
 
     dash_app.callback(
         Output(f"{app_id}-ag-grid-store", "data"),
@@ -110,7 +111,21 @@ def configure_dash_event_handlers(dash_app: object, app_id: str) -> None:
 # Callbacks functions
 # -----------------------------------------------------------------------------
 
+"""
+# How to use client
+
+from application.connections.clients import kk_client, hedge_client
+
+kk_client.get("/info/ping")
+hedge_client.get("/info/ping")
+
+# And parse the response
+"""
+
 
 def callback_init_data(n_intervals: int) -> dict:
+
+    if n_intervals > 0:
+        return {}
 
     return {}

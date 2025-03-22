@@ -16,22 +16,20 @@
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
+    {{ render_partial('partials/theme_switcher.jinja2') }}
     {{ render_partial('partials/header.jinja2') }}
-    <div id="be-alerts">
-    {{ render_partial('partials/alerts.jinja2') }}
-    </div>
+    <div id="be-alerts">{{ render_partial('partials/alerts.jinja2') }}</div>
     {{ render_partial('partials/footer.jinja2', version=version) }}
-    <main role="main">
-        <div class="app_content pt-3 h-100">
-            {% block app_content %}
-            <!-- Content -->
-            {% endblock %}
-        </div>
+    <main role="main" class="app_content pt-3 h-100">
+        {% block app_content %}
+        <!-- Content -->
+        {% endblock %}
     </main>
     {{ render_partial('partials/offcanvas.jinja2') }}
 </body>
     {% block scripts %}
         {{ render_partial('partials/js/imports.jinja2') }}
+        {{ render_partial('partials/js/dark_light_mode_switch.jinja2') }}
     {% endblock %}
     {% block extrajs %}
     {% endblock %}

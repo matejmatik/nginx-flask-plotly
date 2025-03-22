@@ -46,3 +46,19 @@ def format_dash_id(name: str) -> str:
     """
 
     return name.lower().replace("/", "").replace("_", "-")
+
+
+def format_dash_endpoint(url: str) -> str:
+    """
+    endpoint_dash_formater is used to format the url of the Dash component.
+
+    Args:
+        url (str): Url of the Dash component
+
+    Returns:
+        str: Formatted url of the Dash component
+    """
+    if url[0] != "/" or url[-1] != "/":
+        raise ValueError("Url must start and end with /")
+
+    return url.replace("/", "").replace("-", "_")

@@ -38,6 +38,7 @@ services:
     command: ["gunicorn", "application.main:app", "--workers", "1", "--bind", "0.0.0.0:3000", "--log-level", "${FLASK_LOG_LEVEL?Variable not set}", "--reload"]
     volumes:
       - ./static:/project/application/static
+      - ./templates:/project/application/templates
     develop:
       watch:
         - action: sync

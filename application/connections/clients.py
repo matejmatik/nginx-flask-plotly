@@ -49,4 +49,5 @@ def initialize_api_clients() -> None:
     return kk_client, hedge_client
 
 
-kk_client, hedge_client = initialize_api_clients()
+# kk_client, hedge_client = initialize_api_clients()
+kk_client, hedge_client = None, None

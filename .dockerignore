@@ -15,7 +15,10 @@ nginx/
 .venv/
 .ruff_cache/
 CHANGELOG.md
-static
+README.md
+.dockerignore
+.gitignore
 static/
+templates/
 example/
 examples/

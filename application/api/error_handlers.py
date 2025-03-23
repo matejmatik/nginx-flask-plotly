@@ -14,7 +14,6 @@ def __page_internal_server_error(e) -> str:
 
 
 def register_api_error_handlers(app: Flask) -> None:
-
     for error_code, func in [
         (404, __page_not_found),
         (403, __page_forbidden),

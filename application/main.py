@@ -11,7 +11,6 @@ def __setup_docs_routing(app: Flask) -> None: ...
 
 
 def initialize_flask_application() -> Flask:
-
     # Initialize the Flask application
     app = Flask(__name__, instance_relative_config=True)
 

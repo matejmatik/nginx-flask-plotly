@@ -22,7 +22,6 @@ def initialize_dash_app(
     title: str,
     use_subpath: bool = False,
 ) -> CustomDash:
-
     app_id: str = format_dash_id(path)
 
     dash_app: CustomDash = CustomDash(
@@ -50,7 +49,6 @@ def initialize_dash_app(
 
 
 def create_dashboard_layout(app_id: str) -> object:
-
     from dash.dcc import Interval, Store
     from dash.html import P
     from .elements import BeLoading, BeContainer, BeRow, BeCol
@@ -100,7 +98,6 @@ def create_dashboard_layout(app_id: str) -> object:
 
 
 def configure_dash_event_handlers(dash_app: object, app_id: str) -> None:
-
     dash_app.callback(
         Output(f"{app_id}-ag-grid-store", "data"),
         Input(f"{app_id}-interval", "n_intervals"),
@@ -124,7 +121,6 @@ hedge_client.get("/info/ping")
 
 
 def callback_init_data(n_intervals: int) -> dict:
-
     if n_intervals > 0:
         return {}
 

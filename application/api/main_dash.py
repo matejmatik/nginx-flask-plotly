@@ -3,13 +3,11 @@ from ..utils import format_dash_endpoint
 
 
 def register_dash_blueprints(app):
-
     registered_dash_apps: list = [
         (default_dash_app, "/default-dash-app/", "Default Dash App"),
     ]
 
     for dash_app_setup, dash_app_url, dash_app_title in registered_dash_apps:
-
         # Initialize the Dash app
         app = dash_app_setup.initialize_dash_app(
             server=app,

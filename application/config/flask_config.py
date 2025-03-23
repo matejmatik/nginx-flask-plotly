@@ -2,7 +2,6 @@ from os import getenv
 
 
 class FlaskConfiguration:
-
     # General Config
     APP_NAME = getenv("PROJECT_NAME", "Flask API")
     VERSION = getenv("PROJECT_VERSION", "0.0.0")

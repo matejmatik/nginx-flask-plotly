@@ -317,8 +317,13 @@ def BeModal(
     modal_title: str,
     modal_body: list,
 ):
-    from dash_bootstrap_components import (Button, Modal, ModalBody,
-                                           ModalFooter, ModalHeader)
+    from dash_bootstrap_components import (
+        Button,
+        Modal,
+        ModalBody,
+        ModalFooter,
+        ModalHeader,
+    )
 
     return Modal(
         [
